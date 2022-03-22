@@ -27,7 +27,7 @@ def home_page():
 @application.route('/train', methods = ['GET'])
 def train_model():
     result = "Doing all the training"
-    return result, 201, {'Content-Type': 'text/html'}
+    return result, 201, {'Content-Type': 'application/json'}
 
 
 @application.route('/score', methods = ['GET'])
