@@ -1,19 +1,21 @@
-from flask import Flask, redirect, request
+from flask import Flask, redirect, request, abort
 from functools import wraps
 import os
 
 
 application = Flask(__name__)
 
-def check_token(view_function):
+
+def require_api_key(view_function):
     @wraps(view_function)
-    def secure_route_token_check(*args, **kwargs):
-        token = request.args.get('token')
-        if token == os.environ['TOKEN']:
+    def check_header_auth(*args, **kwargs):
+        if request.headers["Authorization"] == os.environ['ACCESS_KEY']:
             return view_function(*args, **kwargs)
         else:
-            return redirect('/')
-    return secure_route_token_check
+            print("Inadequate authorization supplied")
+            abort(401)
+
+    return check_header_auth
 
 
 @application.route('/ping')
