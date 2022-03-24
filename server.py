@@ -2,6 +2,7 @@ from flask import Flask, request, abort
 from functools import wraps
 import os
 
+from src.modeling.predict import prediction_workload
 from src.modeling.train import training_workload
 
 application = Flask(__name__)
@@ -33,7 +34,7 @@ def train_model():
 
 @application.route('/score', methods = ['GET'])
 def score_model():
-    result = "Amazing predictions for sure"
+    result = prediction_workload()
     return result, 201, {'Content-Type': 'application/json'}
 
 
