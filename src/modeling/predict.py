@@ -1,7 +1,7 @@
 from datetime import datetime
 
-from src.data.collect import collect_data
-from src.data.process import preprocessing
+from data.collect import collect_data
+from data.process import preprocessing
 
 
 def prediction_workload(**kwargs):
