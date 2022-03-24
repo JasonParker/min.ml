@@ -2,6 +2,7 @@ from flask import Flask, request, abort
 from functools import wraps
 import os
 
+from src.modeling.train import training_workload
 
 application = Flask(__name__)
 
@@ -26,7 +27,7 @@ def home_page():
 
 @application.route('/train', methods = ['GET'])
 def train_model():
-    result = "Doing all the training"
+    result = training_workload()
     return result, 201, {'Content-Type': 'application/json'}
 
 
