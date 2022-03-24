@@ -1,4 +1,4 @@
-from flask import Flask, redirect, request, abort
+from flask import Flask, request, abort
 from functools import wraps
 import os
 
