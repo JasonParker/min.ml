@@ -1,11 +1,11 @@
 from datetime import datetime
-import joblib
 
 from src.data.collect import collect_data
 from src.data.process import preprocessing
 
 
 def training_workload(**kwargs):
+    print(f"Training workload initiated at {str(datetime.utcnow())[0:19]}")
     ## Fetch data
     ## Splitting/caching
     ## Preprocessing
