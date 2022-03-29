@@ -2,6 +2,7 @@ from datetime import datetime
 
 from data.collect import collect_data
 from data.process import preprocessing
+from utils.io import cache_model_object
 
 
 def training_workload(**kwargs):
@@ -18,5 +19,9 @@ def training_workload(**kwargs):
 
     data = collect_data(scenario = 'training')
     data = preprocessing(data)
+
+    model = "Great model"
+    modelCachingMsg = cache_model_object(model)
+    print(modelCachingMsg)
     
     return "Great model"
