@@ -1,3 +1,7 @@
+# Add the data directory
+# Like I said, don't commit your data to a public repository
+data/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
