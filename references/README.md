@@ -1,0 +1,2 @@
+# References
+This folder is for reference materials, background reading, workflow instructions, and other resources that help to inform data scientists, developers, and other stakeholders about the context for the data science project's subject matter or domain.
