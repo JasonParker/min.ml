@@ -1,11 +1,19 @@
+from datetime import datetime
 from flask import Flask, request, abort
 from functools import wraps
+import logging
 import os
 
 from modeling.predict import prediction_workload
 from modeling.train import training_workload
 
 application = Flask(__name__)
+print(application.__dict__)
+
+logging.basicConfig(filename='example.log', level=logging.DEBUG)
+logging.info(f"App startup time: {str(datetime.utcnow())[0:19]}")
+logging.info(f"App root path: {application.__dict__['root_path']}")
+logging.info(f"App configuration: {application.__dict__['config']}")
 
 
 def require_api_key(view_function):

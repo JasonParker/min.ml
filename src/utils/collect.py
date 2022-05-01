@@ -5,6 +5,8 @@
 ## collection function that retrieves the data in a unified way
 ## to minimize training/prediction skew.
 
+import logging
+
 
 def collect_data(**kwargs):
     """
@@ -31,4 +33,5 @@ def collect_data(**kwargs):
         data = "Retrieve the training data from the historical data source with relevant filter"
     else:
         data = "Retrieve the prediction data from the real-time source with relevant filter"
+    logging.info(f"Logging describing the data, such as its size in memory or number of records")
     return data
