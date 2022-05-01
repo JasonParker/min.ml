@@ -21,7 +21,8 @@ def training_workload(**kwargs):
     data = preprocessing(data)
 
     model = "Great model"
-    modelCachingMsg = cache_model_object(model)
+    filename = "Great model"
+    modelCachingMsg = cache_model_object(model, filename)
     print(modelCachingMsg)
     
     return "Great model"
