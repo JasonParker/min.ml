@@ -19,7 +19,8 @@ def prediction_workload(**kwargs):
 
     data = collect_data(scenario = 'prediction')
     data = preprocessing(data)
-
+    
+    filename = "Great model"
     model = load_model_object(filename)
     predictions = model.predict(data)
     return "Great predictions"
