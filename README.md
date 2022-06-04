@@ -12,5 +12,3 @@ To run the application locally, navigate to the `src` directory and run `server.
 cd src
 python server.py
 ```
-
-Testing
